@@ -1,0 +1,304 @@
+
+/*base*/
+:root {
+    --white: #f7f8fa;
+    --black: #171321;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0%;
+    margin: 0%;
+    font-family:  'Oxygen', sans-serif;
+    background-color: #171321;
+    color: #f7f8fa;
+    font-size: 1.5rem;
+}
+
+h1, h2, h3 {
+    margin: 0
+
+}
+
+a {
+    /*darker magenta*/      
+    color: #e310cb;
+}
+
+p { 
+    margin: auto;
+}
+
+a:hover {
+    color: #ff17e4;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+/*backround color divs*/
+
+.gradient {
+    background: linear-gradient(90deg, rgba(134,251,251,1) 0%, rgba(255,23,228,1) 100%);
+    height: 2px;
+}
+
+.blue {
+    background-color: #0d314b;
+}
+
+/* intro styles*/
+
+#intro {
+    padding: 4rem 1rem 10rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#intro .name {
+    font-family: 'Oxygen Mono', monospace;
+}
+
+.name span {
+    font-family:  'Oxygen', sans-serif;
+    font-size: 4rem;
+    color: #86fbfb;
+    display: block;
+    /*font-weight: 600;*/
+}
+
+#intro h2 {
+    font-size: 4rem;
+    font-family:  'Oxygen', sans-serif;
+    color: var(--white);
+}
+
+
+/*contact styles*/
+
+#contact {
+    text-align: center;
+    background-color: #4b0d49;
+    padding: 3rem 0;
+    margin: 0 auto;
+}
+
+#contact p {
+    width: 370px;
+}
+
+#contact p:last-child {
+    margin-top: 3rem;
+}
+
+#contact h2 {
+    padding-bottom: 2rem;
+}
+
+/*nav bar styles*/
+
+nav {
+    font-family: 'Oxygen Mono', monospace;
+    font-size: 80%;
+    padding: 4rem 1rem;
+}
+
+nav h1 a {
+    font-family: 'Oxygen', sans-serif;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover {
+    color: #ff17e4; 
+}
+
+nav [class*="fa-"] {
+    font-size: 150%;
+    color: #86fbfb;
+}
+
+
+nav [class*="fa-sharp fa-solid fa-code"] {
+    font-size: 100%;
+    color: #86fbfb;
+}
+
+.button {
+    background-color: #e310cb;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: var(--white);
+    font-family: 'Oxygen Mono', monospace;
+    text-decoration: none;
+}
+
+.button:hover {
+    color: var(--white);
+    background-color: #ff17e4;
+}
+
+/*project*/
+
+#projects, #about {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#projects h2, #about h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5);
+    padding-top: 3rem;
+}
+
+#projects h3, #about h3 {
+    color: #86fbfb;
+    padding-bottom: 1rem;
+}
+
+#projects h4, #about h4 {
+    font-size: 1rem;
+    font-family: 'Oxygen Mono', monospace;
+    margin: 0%;
+}
+
+.blackbox {
+    background-color: var(--black);
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#projects ul, #about ul {
+    list-style-type: none;
+    padding-top: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+#projects img, #about img {
+    margin: 2rem 0 4rem 0;
+    border-left: 1px solid #86fbfb;
+    border-top: 1px solid #86fbfb;
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+.top {
+    padding-top: 1rem;
+}
+
+@media (min-width: 550px) {
+    article {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1rem;
+    }
+
+    #projects img, #about img {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+
+    .text {
+        grid-column: 5/11;
+        grid-row: 1/2;
+        order: 2;
+        text-align: right;
+        
+    }
+
+    #projects ul, #about ul{
+        justify-content: flex-end;
+    }
+
+    #projects .reverse .text {
+        grid-column: 1/7;
+        order: 2;
+        text-align: left;
+    }
+
+    #projects .reverse img {
+        grid-column: 6/11;
+        grid-row: 1/2;
+    }
+
+    #projects .reverse ul {
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child{
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+}
+
+/*fotter*/
+
+#fotter {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+#fotter ul {
+    list-style-type: none;
+    margin: 2rem 0;
+    padding: 0%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-size: 3rem;
+}
